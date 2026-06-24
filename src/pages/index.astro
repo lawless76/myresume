@@ -12,7 +12,8 @@ import { site } from '@/data/site';
 ---
 
 <Layout>
-  <div class="flex flex-col h-screen">
+  <!-- Page never scrolls — only the content card scrolls -->
+  <div class="flex flex-col h-screen overflow-hidden">
 
     <!-- Full-width red nav -->
     <nav class="shrink-0 bg-red-700 shadow-sm z-20">
@@ -28,28 +29,26 @@ import { site } from '@/data/site';
       </div>
     </nav>
 
-    <!-- Scrollable content on slate background -->
-    <div class="flex-1 overflow-y-auto bg-slate-200">
-      <div class="flex gap-4 p-4 md:p-6 items-start">
+    <!-- Content area: slate background, no overflow -->
+    <div class="flex-1 overflow-hidden bg-slate-200 flex gap-4 p-4 md:p-6">
 
-        <!-- Sticky profile + contact card (hidden below xl) -->
-        <aside class="hidden xl:block w-56 shrink-0 sticky top-4">
-          <ContactCard />
-        </aside>
+      <!-- Contact card (xl screens only) -->
+      <aside class="hidden xl:flex xl:flex-col w-56 shrink-0">
+        <ContactCard />
+      </aside>
 
-        <!-- Main content card -->
-        <main class="flex-1 min-w-0">
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            <About />
-            <Experience />
-            <Skills />
-            <Projects />
-            <Education />
-            <Contact />
-          </div>
-        </main>
-
+      <!-- Centered card — scrolls internally, no browser scroll -->
+      <div class="flex-1 flex justify-center overflow-hidden">
+        <div class="w-full max-w-3xl overflow-y-auto rounded-xl bg-white shadow-sm">
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Education />
+          <Contact />
+        </div>
       </div>
+
     </div>
 
     <!-- Footer: always visible at bottom -->
