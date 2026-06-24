@@ -19,7 +19,7 @@ export const skills: SkillGroup[] = [
   {
     category: 'Microsoft Dynamics 365 / CRM',
     icon: '🔷',
-    iconUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-dataverse.svg',
+    iconUrl: '/icons/microsoft-dataverse.svg',
     items: [
       'Dynamics 365 CRM',
       'Customer Engagement',
@@ -45,7 +45,7 @@ export const skills: SkillGroup[] = [
   {
     category: 'Azure & DevOps',
     icon: '☁️',
-    iconUrl: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/azure-devops.svg',
+    iconUrl: '/icons/azure-devops.svg',
     items: [
       'Azure',
       'Azure DevOps',
@@ -71,7 +71,7 @@ export const skills: SkillGroup[] = [
   {
     category: 'Tools & Platforms',
     icon: '🛠️',
-    iconUrl: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/visual-studio-code.svg',
+    iconUrl: '/icons/visual-studio-code.svg',
     items: [
       'Visual Studio',
       'SQL',
