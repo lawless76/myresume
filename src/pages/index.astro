@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Sidebar from '@/components/Sidebar.astro';
 import About from '@/components/About.astro';
 import Experience from '@/components/Experience.astro';
 import Skills from '@/components/Skills.astro';
@@ -13,57 +12,49 @@ import { site } from '@/data/site';
 ---
 
 <Layout>
-  <!-- Two-column layout: sidebar left, flex-col right panel -->
-  <div class="lg:flex lg:h-screen">
+  <div class="flex flex-col h-screen">
 
-    <!-- Left: sticky sidebar -->
-    <Sidebar />
-
-    <!-- Right: slate background so card floats -->
-    <div class="flex-1 flex flex-col lg:overflow-hidden bg-slate-200">
-
-      <!-- Red nav bar -->
-      <nav class="shrink-0 bg-red-700 shadow-sm z-20">
-        <div class="flex items-center gap-0.5 px-4 h-12 overflow-x-auto scrollbar-none">
-          {site.nav.map((link) => (
-            <a
-              href={link.href}
-              class="px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors whitespace-nowrap"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      </nav>
-
-      <!-- Scrollable area — contact card + content card side by side -->
-      <div class="flex-1 overflow-y-auto">
-        <div class="flex gap-4 p-4 md:p-6 items-start">
-
-          <!-- Sticky contact card (hidden below xl) -->
-          <aside class="hidden xl:block w-52 shrink-0 sticky top-4">
-            <ContactCard />
-          </aside>
-
-          <!-- Main content card -->
-          <main class="flex-1 min-w-0">
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-              <About />
-              <Experience />
-              <Skills />
-              <Projects />
-              <Education />
-              <Contact />
-            </div>
-          </main>
-
-        </div>
+    <!-- Full-width red nav -->
+    <nav class="shrink-0 bg-red-700 shadow-sm z-20">
+      <div class="flex items-center gap-0.5 px-4 h-12 overflow-x-auto scrollbar-none">
+        {site.nav.map((link) => (
+          <a
+            href={link.href}
+            class="px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors whitespace-nowrap"
+          >
+            {link.label}
+          </a>
+        ))}
       </div>
+    </nav>
 
-      <!-- Footer: always visible at bottom -->
-      <Footer />
+    <!-- Scrollable content on slate background -->
+    <div class="flex-1 overflow-y-auto bg-slate-200">
+      <div class="flex gap-4 p-4 md:p-6 items-start">
 
+        <!-- Sticky profile + contact card (hidden below xl) -->
+        <aside class="hidden xl:block w-56 shrink-0 sticky top-4">
+          <ContactCard />
+        </aside>
+
+        <!-- Main content card -->
+        <main class="flex-1 min-w-0">
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <About />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Education />
+            <Contact />
+          </div>
+        </main>
+
+      </div>
     </div>
+
+    <!-- Footer: always visible at bottom -->
+    <Footer />
+
   </div>
 </Layout>
 
