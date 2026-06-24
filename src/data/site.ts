@@ -31,6 +31,11 @@ export const site = {
   umamiWebsiteId: '',
   umamiSrc: '',          // e.g. 'https://analytics.yourdomain.com/script.js'
 
+  // CV download – set to the URL/path of your CV PDF to show the "Download CV" button.
+  // e.g. '/cv.pdf' (drop the file in /public) or an external link.
+  // Leave blank to hide the button.
+  cvUrl: '',
+
   // Contact form – powered by Formspree (https://formspree.io)
   // Replace with your own Formspree endpoint after creating a free account.
   formspreeEndpoint: 'https://formspree.io/f/REPLACE_ME',
