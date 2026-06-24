@@ -37,9 +37,9 @@ import { site } from '@/data/site';
         <ContactCard />
       </aside>
 
-      <!-- Centered card — scrolls internally, no browser scroll -->
-      <div class="flex-1 flex justify-center overflow-hidden">
-        <div class="w-full max-w-3xl overflow-y-auto rounded-xl bg-white shadow-sm">
+      <!-- Scrollable wrapper — scrollbar sits at page edge, not on the card -->
+      <div class="flex-1 overflow-y-auto flex flex-col items-center">
+        <div class="w-full max-w-3xl bg-white rounded-xl shadow-sm overflow-hidden">
           <About />
           <Experience />
           <Skills />
