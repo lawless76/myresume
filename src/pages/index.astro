@@ -18,10 +18,10 @@ import { site } from '@/data/site';
     <!-- Left: sticky sidebar -->
     <Sidebar />
 
-    <!-- Right: flex column so footer is always visible -->
-    <div class="flex-1 flex flex-col lg:overflow-hidden">
+    <!-- Right: slate background so card floats -->
+    <div class="flex-1 flex flex-col lg:overflow-hidden bg-slate-200">
 
-      <!-- Sticky red nav bar -->
+      <!-- Red nav bar -->
       <nav class="shrink-0 bg-red-700 shadow-sm z-20">
         <div class="flex items-center gap-0.5 px-4 h-12 overflow-x-auto scrollbar-none">
           {site.nav.map((link) => (
@@ -35,14 +35,16 @@ import { site } from '@/data/site';
         </div>
       </nav>
 
-      <!-- Scrollable main content -->
-      <main class="flex-1 overflow-y-auto bg-white">
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
+      <!-- Scrollable area — sections float in a centred white card -->
+      <main class="flex-1 overflow-y-auto p-4 md:p-6">
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Education />
+          <Contact />
+        </div>
       </main>
 
       <!-- Footer: always visible at bottom -->
