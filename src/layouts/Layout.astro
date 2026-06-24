@@ -1,0 +1,53 @@
+---
+import { site } from '@/data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = site.name,
+  description = site.description,
+} = Astro.props;
+
+const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <title>{pageTitle}</title>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Umami Analytics (only injected when configured in src/data/site.ts) -->
+    {site.umamiWebsiteId && site.umamiSrc && (
+      <script
+        async
+        defer
+        data-website-id={site.umamiWebsiteId}
+        src={site.umamiSrc}
+      ></script>
+    )}
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <slot />
+  </body>
+</html>

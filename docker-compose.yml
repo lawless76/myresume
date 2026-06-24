@@ -1,0 +1,9 @@
+services:
+  myresume:
+    image: ghcr.io/lawless76/myresume:latest
+    container_name: myresume
+    restart: unless-stopped
+    ports:
+      - "3000:80"   # Access at http://10.0.1.252:3000 (change port if needed)
+    labels:
+      - "com.dockge.name=myresume"
