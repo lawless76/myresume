@@ -40,6 +40,31 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 - **Dockerfile** — changed `npm ci` → `npm install` to allow builds without a committed `package-lock.json`.
 
+## [2.0.0] – 2026-06-24
+
+### Changed
+- **Layout** — complete redesign from single-column to two-column layout with a sticky sidebar and scrollable right panel
+- **Layout** — sidebar removed; replaced with a sticky contact card that sits to the left of the main content card on wide screens (≥1280px)
+- **Nav bar** — moved to full-width red bar at the top; menu items centred to match the footer
+- **Footer** — stripped back to a slim centred copyright-only bar; always visible at the bottom of the viewport
+- **Right panel** — sections now float inside a centred white card on a `slate-200` background, matching a modern résumé card style
+- **Contact card** — profile block (avatar, name, title, animated social icons) moved from the sidebar into the top of the contact card as a red header; contact details sit below in the same card
+- **Contact card** — background colour updated to `red-700` to match the nav bar and footer
+- **Contact card** — text labels (PHONE, EMAIL, LOCATION) replaced with inline icons
+- **Contact card** — location row removed
+- **Contact card** — row hover style updated to match nav bar hover (`red-600` background, white text)
+- **Sidebar** — removed entirely; all profile and contact content consolidated into the contact card
+
+### Added
+- **ContactCard component** — new `src/components/ContactCard.astro` combining the profile header and contact details in one sticky card
+- **Animated social icons** — LinkedIn, GitHub, and Discord icons in the contact card header lift and reveal a label on hover (same animation as the former sidebar icons)
+- **Download CV button** — appears in the contact card when `cvUrl` is set in `src/data/site.ts`
+
+### Removed
+- **Sidebar component** — `src/components/Sidebar.astro` no longer used in the layout
+
+---
+
 <!-- Add new entries above this line using the format:
 
 ## [X.Y.Z] – YYYY-MM-DD
