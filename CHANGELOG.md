@@ -27,6 +27,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0] – 2026-06-24
+
+### Changed
+- **About section** — removed contact details card; bio is now full-width with an extra stat (BCS cert). Cleaner layout, no duplicate information.
+- **Contact section** — contact details (email, phone, location) moved below the form as three clickable side-by-side cards. Email opens mail client, phone opens dialler, location opens Google Maps.
+- **Social links** — LinkedIn and GitHub moved below the contact cards as pill buttons.
+
+### Added
+- **Discord link** — new `discord` and `discordUsername` fields in `src/data/site.ts`. Button appears automatically once filled in. README updated with instructions for finding your Discord user ID.
+
+### Fixed
+- **Dockerfile** — changed `npm ci` → `npm install` to allow builds without a committed `package-lock.json`.
+
 <!-- Add new entries above this line using the format:
 
 ## [X.Y.Z] – YYYY-MM-DD

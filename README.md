@@ -73,6 +73,22 @@ docker-compose.yml # Dockge stack definition
 
 ---
 
+## Discord
+
+To add your Discord profile link to the contact section:
+
+1. Open Discord (desktop or browser)
+2. Go to **User Settings → Advanced** and turn on **Developer Mode**
+3. Click your own avatar/username anywhere → **Copy User ID** — you'll get a long number like `123456789012345678`
+4. Open `src/data/site.ts` and fill in:
+   ```ts
+   discord: 'https://discord.com/users/123456789012345678',
+   discordUsername: 'lawless76',   // your username without the @
+   ```
+5. Push — the Discord button appears automatically
+
+---
+
 ## Analytics (Umami)
 
 The site supports [Umami](https://umami.is) for privacy-friendly visitor analytics.
