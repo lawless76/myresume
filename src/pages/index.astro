@@ -12,22 +12,22 @@ import { site } from '@/data/site';
 ---
 
 <Layout>
-  <!-- Two-column layout: sidebar fixed left, content scrollable right -->
+  <!-- Two-column layout: sidebar left, flex-col right panel -->
   <div class="lg:flex lg:h-screen">
 
     <!-- Left: sticky sidebar -->
     <Sidebar />
 
-    <!-- Right: scrollable content panel -->
-    <div class="flex-1 bg-white lg:overflow-y-auto" id="scroll-content">
+    <!-- Right: flex column so footer is always visible -->
+    <div class="flex-1 flex flex-col lg:overflow-hidden">
 
-      <!-- Sticky section nav -->
-      <nav class="sticky top-0 z-20 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-        <div class="flex items-center gap-0.5 px-6 h-13 overflow-x-auto scrollbar-none">
+      <!-- Sticky red nav bar -->
+      <nav class="shrink-0 bg-red-700 shadow-sm z-20">
+        <div class="flex items-center gap-0.5 px-4 h-12 overflow-x-auto scrollbar-none">
           {site.nav.map((link) => (
             <a
               href={link.href}
-              class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors whitespace-nowrap"
+              class="px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -35,8 +35,8 @@ import { site } from '@/data/site';
         </div>
       </nav>
 
-      <!-- Main sections -->
-      <main>
+      <!-- Scrollable main content -->
+      <main class="flex-1 overflow-y-auto bg-white">
         <About />
         <Experience />
         <Skills />
@@ -45,7 +45,7 @@ import { site } from '@/data/site';
         <Contact />
       </main>
 
-      <!-- Footer -->
+      <!-- Footer: always visible at bottom -->
       <Footer />
 
     </div>
@@ -53,18 +53,10 @@ import { site } from '@/data/site';
 </Layout>
 
 <style>
-  /* Hide scrollbar on the nav on small screens */
   .scrollbar-none {
     scrollbar-width: none;
   }
   .scrollbar-none::-webkit-scrollbar {
     display: none;
-  }
-
-  /* On desktop, make the right panel fill the height and scroll independently */
-  @media (min-width: 1024px) {
-    #scroll-content {
-      height: 100vh;
-    }
   }
 </style>
