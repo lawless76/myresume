@@ -2,10 +2,10 @@
 import { site } from '@/data/site';
 ---
 
-<div class="bg-white rounded-xl shadow-sm overflow-hidden">
+<div class="rounded-xl shadow-sm overflow-hidden" style="background-color: #ef4444;">
 
-  <!-- Red profile header -->
-  <div class="p-6 flex flex-col items-center gap-4" style="background-color: #ef4444;">
+  <!-- Profile header -->
+  <div class="p-6 flex flex-col items-center gap-4">
 
     <!-- Avatar -->
     <div class="w-24 h-24 rounded-2xl flex items-center justify-center select-none" style="background-color: #dc2626; border: 2px solid #f87171;" aria-label="Profile photo placeholder">
@@ -52,7 +52,7 @@ import { site } from '@/data/site';
   </div>
 
   <!-- Contact details -->
-  <div class="p-4 flex flex-col gap-1">
+  <div class="px-4 pb-4 flex flex-col gap-1">
 
     <!-- Phone -->
     <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="contact-row">
@@ -82,14 +82,14 @@ import { site } from '@/data/site';
     <!-- Download CV -->
     {site.cvUrl && (
       <>
-        <div class="border-t border-slate-100 my-2"></div>
+        <div class="my-2" style="border-top: 1px solid rgba(255,255,255,0.25);"></div>
         <a
           href={site.cvUrl}
           download
-          class="flex items-center justify-center gap-2 py-2.5 text-white font-semibold text-sm rounded-lg transition-colors shadow-sm"
-          style="background-color: #ef4444;"
-          onmouseover="this.style.backgroundColor='#dc2626'"
-          onmouseout="this.style.backgroundColor='#ef4444'"
+          class="flex items-center justify-center gap-2 py-2.5 font-semibold text-sm rounded-lg transition-colors shadow-sm"
+          style="background-color: rgba(0,0,0,0.2); color: white;"
+          onmouseover="this.style.backgroundColor='rgba(0,0,0,0.35)'"
+          onmouseout="this.style.backgroundColor='rgba(0,0,0,0.2)'"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -140,21 +140,22 @@ import { site } from '@/data/site';
     text-decoration: none;
   }
   .contact-row:hover {
-    background-color: #fef2f2;
-    border-left-color: #ef4444;
+    background-color: rgba(0,0,0,0.12);
+    border-left-color: rgba(255,255,255,0.6);
   }
   .contact-icon {
     width: 1rem;
     height: 1rem;
-    color: #ef4444;
+    color: rgba(255,255,255,0.7);
     flex-shrink: 0;
     transition: color 0.15s ease;
   }
   .contact-value {
     font-size: 0.875rem;
     font-weight: 500;
-    color: #334155;
+    color: rgba(255,255,255,0.9);
     transition: color 0.15s ease;
   }
-  .contact-row:hover .contact-value { color: #ef4444; }
+  .contact-row:hover .contact-icon { color: white; }
+  .contact-row:hover .contact-value { color: white; }
 </style>
