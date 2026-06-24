@@ -22,8 +22,8 @@ export const site = {
   // Discord – use your profile URL: https://discord.com/users/YOUR_NUMERIC_ID
   // See README.md § Discord for how to find your ID.
   // Leave blank to hide the Discord link.
-  discord: '',   // e.g. 'https://discord.com/users/123456789012345678'
-  discordUsername: '', // e.g. 'lawless76' — displayed as the link label
+  discord: 'https://discord.com/users/711012256057524314',
+  discordUsername: 'lawless76',
 
   // Umami analytics – set your website ID after you install Umami.
   // Leave blank to disable analytics.
