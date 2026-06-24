@@ -29,26 +29,28 @@ import { site } from '@/data/site';
       </div>
     </nav>
 
-    <!-- Content area: slate background, no overflow -->
-    <div class="flex-1 overflow-hidden bg-slate-200 flex gap-4 p-4 md:p-6">
+    <!-- Content area: scrolls here, not on the browser -->
+    <div class="flex-1 overflow-y-auto min-h-0 bg-slate-200">
+      <div class="flex gap-4 p-4 md:p-6 items-start">
 
-      <!-- Contact card (xl screens only) -->
-      <aside class="hidden xl:flex xl:flex-col w-56 shrink-0">
-        <ContactCard />
-      </aside>
+        <!-- Contact card (xl screens only) -->
+        <aside class="hidden xl:flex xl:flex-col w-56 shrink-0 sticky top-4">
+          <ContactCard />
+        </aside>
 
-      <!-- Scrollable wrapper — scrollbar sits at page edge, not on the card -->
-      <div class="flex-1 overflow-y-auto flex flex-col items-center">
-        <div class="w-full max-w-3xl bg-white rounded-xl shadow-sm overflow-hidden">
-          <About />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Education />
-          <Contact />
+        <!-- Centered content card -->
+        <div class="flex-1 min-w-0">
+          <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
+            <About />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Education />
+            <Contact />
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
 
     <!-- Footer: always visible at bottom -->
