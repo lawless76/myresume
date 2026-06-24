@@ -6,12 +6,17 @@ const year = new Date().getFullYear();
 
 <footer class="bg-red-700 text-red-200 py-10">
   <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm">
-      &copy; {year} {site.name}. Built with
-      <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Astro</a>
-      &amp;
-      <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Tailwind CSS</a>.
-    </p>
+    <div class="text-sm space-y-1">
+      <p>
+        &copy; {year} {site.name}. Built with
+        <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Astro</a>
+        &amp;
+        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Tailwind CSS</a>.
+      </p>
+      <p class="text-xs text-red-300">
+        Microsoft product icons are trademarks of Microsoft Corporation.
+      </p>
+    </div>
 
     <div class="flex items-center gap-2">
       {site.linkedin && (

@@ -33,7 +33,7 @@ export const skills: SkillGroup[] = [
   {
     category: 'Power Platform',
     icon: '⚡',
-    iconUrl: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/microsoft-power-automate.svg',
+    iconUrl: '/icons/power-platform.svg',
     items: [
       'Power Platform',
       'Power Apps',
