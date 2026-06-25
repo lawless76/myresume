@@ -28,24 +28,19 @@ import { site } from '@/data/site';
       </div>
     </nav>
 
-    <!-- Scrollable area -->
-    <div class="flex-1 overflow-y-auto min-h-0 bg-slate-200">
+    <!-- Below-nav layout: contact card + scrolling content card -->
+    <div class="flex-1 min-h-0 bg-slate-200 flex flex-col">
 
-      <!-- Contact card: sticky at top -->
-      <div id="contact-sticky" class="sticky top-0 z-10 bg-slate-200 px-4 md:px-6 pt-4 md:pt-6 pb-3">
+      <!-- Contact card: always visible at top, never scrolls -->
+      <div class="shrink-0 px-4 md:px-6 pt-4 md:pt-6 pb-3">
         <div class="max-w-3xl mx-auto">
           <ContactCard />
         </div>
       </div>
 
-      <!-- Sticky rounded-top cap — always shows the top of the content card -->
-      <div id="content-cap" class="sticky z-[9] px-4 md:px-6" style="top: 0">
-        <div class="max-w-3xl mx-auto h-4 bg-white rounded-t-xl shadow-sm"></div>
-      </div>
-
-      <!-- Content sections (rounded bottom, no rounded top — cap provides that) -->
-      <div class="px-4 md:px-6 pb-6 -mt-1">
-        <div class="max-w-3xl mx-auto bg-white rounded-b-xl shadow-sm overflow-hidden text-center">
+      <!-- Content card: fills remaining height, rounded corners always visible, content scrolls inside -->
+      <div class="flex-1 min-h-0 px-4 md:px-6 pb-6">
+        <div class="max-w-3xl mx-auto h-full bg-white rounded-xl shadow-sm overflow-y-auto text-center">
           <About />
           <Experience />
           <Skills />
@@ -72,14 +67,3 @@ import { site } from '@/data/site';
   }
 </style>
 
-<script>
-  function updateCapTop() {
-    const contactSticky = document.getElementById('contact-sticky');
-    const cap = document.getElementById('content-cap');
-    if (contactSticky && cap) {
-      cap.style.top = contactSticky.offsetHeight + 'px';
-    }
-  }
-  updateCapTop();
-  window.addEventListener('resize', updateCapTop);
-</script>
