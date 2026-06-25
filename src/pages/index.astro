@@ -12,7 +12,6 @@ import { site } from '@/data/site';
 ---
 
 <Layout>
-  <!-- Page never scrolls — only the content card scrolls -->
   <div class="flex flex-col h-screen overflow-hidden">
 
     <!-- Full-width red nav -->
@@ -29,15 +28,19 @@ import { site } from '@/data/site';
       </div>
     </nav>
 
-    <!-- Slate background — outer scrolls, both cards centred -->
+    <!-- Scrollable slate background -->
     <div class="flex-1 overflow-y-auto min-h-0 bg-slate-200">
-      <div class="max-w-3xl mx-auto px-4 md:px-6 py-4 md:py-6 flex flex-col gap-4">
 
-        <!-- Profile / contact card -->
-        <ContactCard />
+      <!-- Contact card: sticky — content scrolls behind it -->
+      <div class="sticky top-0 z-10 bg-slate-200 px-4 md:px-6 pt-4 md:pt-6 pb-4">
+        <div class="max-w-3xl mx-auto">
+          <ContactCard />
+        </div>
+      </div>
 
-        <!-- Content card -->
-        <div class="bg-white rounded-xl shadow-sm overflow-hidden text-center">
+      <!-- Content card: scrolls up behind the contact card -->
+      <div class="px-4 md:px-6 pb-6">
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden text-center">
           <About />
           <Experience />
           <Skills />
@@ -45,8 +48,8 @@ import { site } from '@/data/site';
           <Education />
           <Contact />
         </div>
-
       </div>
+
     </div>
 
     <!-- Footer: always visible at bottom -->
