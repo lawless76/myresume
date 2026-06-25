@@ -8,7 +8,7 @@ import { skills } from '@/data/skills';
     <h2 class="mt-1 text-2xl font-bold text-slate-900">Skills & Technologies</h2>
   </div>
 
-  <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+  <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 justify-center">
     {skills.map((group) => (
       <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 hover:border-red-200 hover:shadow-sm transition-all">
         <div class="flex items-center gap-3 mb-4">
@@ -24,7 +24,7 @@ import { skills } from '@/data/skills';
           )}
           <h3 class="font-semibold text-slate-900 text-sm leading-tight">{group.category}</h3>
         </div>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 justify-center">
           {group.items.map((item) => (
             <span class="px-3 py-1.5 bg-white rounded-lg text-slate-700 text-xs font-medium border border-slate-200 hover:border-red-300 hover:text-red-700 transition-colors">
               {item}
