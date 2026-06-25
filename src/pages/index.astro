@@ -22,7 +22,7 @@ import { site } from '@/data/site';
         <div class="flex items-center px-2 h-12">
 
           <!-- Links (hidden when overflowing) -->
-          <div id="nav-links" class="flex items-center gap-0.5 flex-1 overflow-hidden">
+          <div id="nav-links" class="flex items-center justify-center gap-0.5 flex-1 overflow-hidden">
             {site.nav.map((link) => (
               <a
                 href={link.href}
@@ -170,7 +170,10 @@ import { site } from '@/data/site';
     });
   });
 
-  // Check on load and whenever the viewport resizes / zoom changes
+  // Check on load and whenever the viewport/zoom changes.
+  // Observe the nav card itself — navLinks is hidden in burger mode so
+  // a ResizeObserver on it would never fire when zooming back out.
   updateNav();
-  new ResizeObserver(updateNav).observe(navLinks);
+  new ResizeObserver(updateNav).observe(document.getElementById('main-nav')!);
+  window.addEventListener('resize', updateNav);
 </script>
