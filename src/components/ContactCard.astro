@@ -13,7 +13,7 @@ import { site } from '@/data/site';
     </div>
 
     <!-- Info -->
-    <div class="flex-1 py-3 pr-3 md:py-6 md:pr-6 flex flex-col justify-center gap-2 md:gap-4 min-w-0">
+    <div class="flex-1 py-3 pr-3 md:py-6 md:pr-6 flex flex-col justify-center items-center gap-2 md:gap-4 min-w-0 text-center">
 
       <!-- Name & Title -->
       <div>
@@ -71,7 +71,7 @@ import { site } from '@/data/site';
       <!-- Download CV -->
       {site.cvUrl && (
         <a href={site.cvUrl} download
-           class="self-start flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 font-semibold text-xs md:text-sm rounded-lg transition-colors"
+           class="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 font-semibold text-xs md:text-sm rounded-lg transition-colors"
            style="background-color: rgba(0,0,0,0.2); color: white;"
            onmouseover="this.style.backgroundColor='rgba(0,0,0,0.35)'"
            onmouseout="this.style.backgroundColor='rgba(0,0,0,0.2)'">
