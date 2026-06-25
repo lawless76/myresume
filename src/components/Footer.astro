@@ -4,16 +4,18 @@ import { site } from '@/data/site';
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-red-700 text-red-200 py-3">
-  <div class="px-6 text-center space-y-0.5">
-    <p class="text-sm">
-      &copy; {year} {site.name}. Built with
-      <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Astro</a>
-      &amp;
-      <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Tailwind CSS</a>.
-    </p>
-    <p class="text-xs text-red-300">
-      Microsoft product icons are trademarks of Microsoft Corporation.
-    </p>
-  </div>
-</footer>
+<div class="shrink-0 px-4 md:px-6 pt-3 pb-4">
+  <footer class="bg-red-700 text-red-200 py-3 rounded-xl shadow-sm max-w-3xl mx-auto">
+    <div class="px-6 text-center space-y-0.5">
+      <p class="text-sm">
+        &copy; {year} {site.name}. Built with
+        <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Astro</a>
+        &amp;
+        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Tailwind CSS</a>.
+      </p>
+      <p class="text-xs text-red-300">
+        Microsoft product icons are trademarks of Microsoft Corporation.
+      </p>
+    </div>
+  </footer>
+</div>
