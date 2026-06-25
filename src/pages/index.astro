@@ -15,18 +15,54 @@ import { site } from '@/data/site';
   <div class="flex flex-col h-[100dvh] overflow-hidden bg-slate-200">
 
     <!-- Floating nav card -->
-    <div class="shrink-0 px-4 md:px-6 pt-4 pb-3">
-      <nav class="bg-red-700 rounded-xl shadow-sm z-20 max-w-3xl mx-auto">
-        <div class="flex items-center justify-start md:justify-center gap-0.5 px-4 h-12 overflow-x-auto scrollbar-none">
+    <div class="shrink-0 px-4 md:px-6 pt-4 pb-3 relative z-20">
+      <nav class="bg-red-700 rounded-xl shadow-sm max-w-3xl mx-auto" id="main-nav">
+
+        <!-- Nav bar row -->
+        <div class="flex items-center px-2 h-12">
+
+          <!-- Links (hidden when overflowing) -->
+          <div id="nav-links" class="flex items-center gap-0.5 flex-1 overflow-hidden">
+            {site.nav.map((link) => (
+              <a
+                href={link.href}
+                class="nav-link px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors whitespace-nowrap shrink-0"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <!-- Hamburger button (shown when links overflow) -->
+          <button
+            id="nav-burger"
+            class="hidden p-2 rounded-md text-red-100 hover:text-white hover:bg-red-600 transition-colors ml-auto"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <!-- Hamburger icon -->
+            <svg id="icon-menu" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <!-- Close icon -->
+            <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dropdown menu (expands nav card downward) -->
+        <div id="nav-dropdown" class="hidden border-t border-red-600 py-1">
           {site.nav.map((link) => (
             <a
               href={link.href}
-              class="px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors whitespace-nowrap"
+              class="dropdown-link block px-5 py-2.5 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 transition-colors"
             >
               {link.label}
             </a>
           ))}
         </div>
+
       </nav>
     </div>
 
@@ -79,7 +115,7 @@ import { site } from '@/data/site';
   .content-scroll::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 9999px;
-    margin: 12px; /* keeps bar away from the card's rounded corners */
+    margin: 12px;
   }
   .content-scroll::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.15);
@@ -90,3 +126,51 @@ import { site } from '@/data/site';
   }
 </style>
 
+<script>
+  const navLinks   = document.getElementById('nav-links')!;
+  const burger     = document.getElementById('nav-burger')!;
+  const dropdown   = document.getElementById('nav-dropdown')!;
+  const iconMenu   = document.getElementById('icon-menu')!;
+  const iconClose  = document.getElementById('icon-close')!;
+
+  function updateNav() {
+    // Temporarily show links to measure their natural width
+    navLinks.classList.remove('hidden');
+    burger.classList.add('hidden');
+
+    const overflowing = navLinks.scrollWidth > navLinks.clientWidth;
+
+    if (overflowing) {
+      navLinks.classList.add('hidden');
+      burger.classList.remove('hidden');
+    } else {
+      // Make sure dropdown is also closed when links are visible
+      dropdown.classList.add('hidden');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  burger.addEventListener('click', () => {
+    const isOpen = !dropdown.classList.contains('hidden');
+    dropdown.classList.toggle('hidden', isOpen);
+    iconMenu.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+    burger.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close dropdown when a link is clicked
+  dropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      dropdown.classList.add('hidden');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Check on load and whenever the viewport resizes / zoom changes
+  updateNav();
+  new ResizeObserver(updateNav).observe(navLinks);
+</script>
