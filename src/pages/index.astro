@@ -50,7 +50,7 @@ import { site } from '@/data/site';
         </div>
 
         <!-- Dropdown: absolute, right-aligned, only as wide as the longest item -->
-        <div id="nav-dropdown" class="hidden absolute right-0 top-full mt-2 bg-red-700 rounded-xl shadow-lg overflow-hidden w-max z-30">
+        <div id="nav-dropdown" class="hidden absolute right-0 top-full mt-2 bg-red-700 rounded-xl shadow-lg overflow-hidden justify-right w-max z-30">
           {site.nav.map((link) => (
             <a
               href={link.href}
