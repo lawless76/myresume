@@ -40,7 +40,7 @@ import { site } from '@/data/site';
 
       <!-- Content card: fills remaining height, rounded corners always visible, content scrolls inside -->
       <div class="flex-1 min-h-0 px-4 md:px-6 pb-6">
-        <div class="max-w-3xl mx-auto h-full bg-white rounded-xl shadow-sm overflow-y-auto text-center">
+        <div class="max-w-3xl mx-auto h-full bg-white rounded-xl shadow-sm overflow-y-auto text-center content-scroll">
           <About />
           <Experience />
           <Skills />
@@ -64,6 +64,27 @@ import { site } from '@/data/site';
   }
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Subtle rounded scrollbar for the content card */
+  .content-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  }
+  .content-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+  .content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 9999px;
+    margin: 12px; /* keeps bar away from the card's rounded corners */
+  }
+  .content-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 9999px;
+  }
+  .content-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.28);
   }
 </style>
 
