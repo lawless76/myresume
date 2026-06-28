@@ -55,7 +55,7 @@ export const experience: Role[] = [
     title: 'IT Support Officer',
     period: '2019 – 2022',
     description:
-      'Provided end-user support across the organisation, sub branches, managing software deployments via SCCM, and maintaining DVA ESO and PRODA portals. Key liaison for sub-branch volunteers and major business stakeholders.',
+      "Provided end-user support across the organisation, sub branches, managing software deployments via SCCM, and maintaining DVA ESO and PRODA portals. Key liaison for sub-branch volunteers and major business stakeholders.",
     skills: [
       'Windows 10',
       'Iphone / Android',
