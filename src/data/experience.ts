@@ -20,7 +20,7 @@ export const experience: Role[] = [
     period: '2023 – Present',
     current: true,
     description:
-      'CRM development and customisation across RSL Queensland, building automated journeys, custom JavaScript solutions, and Power Platform integrations to improve RSL's engagement within the veteran community.',
+      "CRM development and customisation across RSL Queensland, building automated journeys, custom JavaScript solutions, and Power Platform integrations to improve RSL's engagement within the veteran community.",
     skills: [
       'Dynamics 365 CRM',
       'Customer Engagement',
