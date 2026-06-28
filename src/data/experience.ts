@@ -20,7 +20,7 @@ export const experience: Role[] = [
     period: '2023 – Present',
     current: true,
     description:
-      'Lead CRM development and customisation across RSL Queensland, building automated journeys, custom JavaScript solutions, and Power Platform integrations to improve member engagement and internal operations.',
+      'CRM development and customisation across RSL Queensland, building automated journeys, custom JavaScript solutions, and Power Platform integrations to improve RSL's engagement within the veteran community.',
     skills: [
       'Dynamics 365 CRM',
       'Customer Engagement',
@@ -40,7 +40,7 @@ export const experience: Role[] = [
     title: 'Systems Administrator',
     period: '2022 – 2023',
     description:
-      'Managed sub-branch site infrastructure across Queensland, overseeing networking equipment, video conferencing, printing, and Microsoft Teams administration. Served as the escalation point for helpdesk incidents.',
+      'Managed sub-branch site infrastructure across Queensland and Tasmania, overseeing networking equipment, video conferencing, printing, user management and Microsoft Teams administration. Served as the escalation point for helpdesk incidents.',
     skills: [
       'Fortinet Networking',
       'Yealink Video Conferencing',
@@ -55,9 +55,10 @@ export const experience: Role[] = [
     title: 'IT Support Officer',
     period: '2019 – 2022',
     description:
-      'Provided end-user support across the organisation, managing software deployments via SCCM, supporting Dynamics CRM, and maintaining DVA ESO and PRODA portals. Key liaison for sub-branch volunteers and major business stakeholders.',
+      'Provided end-user support across the organisation, sub branches, managing software deployments via SCCM, and maintaining DVA ESO and PRODA portals. Key liaison for sub-branch volunteers and major business stakeholders.',
     skills: [
       'Windows 10',
+      'Iphone / Android',
       'ServiceNow',
       'SCCM',
       'Mimecast',
@@ -77,11 +78,13 @@ export const experience: Role[] = [
       'Delivered IT support across Windows environments, managing SCCM deployments, server setups, Crystal Reports, VPNs, and Cisco Meraki infrastructure. Supported a broad range of hardware, software, and connectivity needs for a large engineering organisation.',
     skills: [
       'Windows 7/8/10',
+      'Iphone / Android',
       'SCCM',
       'SQL Queries',
       'Crystal Reports',
       'Cisco Meraki',
       'Citrix',
+      'Pronto',
       'VPN',
       'Server Setup',
       'Software Deployment',
