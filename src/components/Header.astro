@@ -1,14 +1,15 @@
+// test
 ---
 import { site } from '@/data/site';
 ---
 
 <header
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 bg-red-700 border-b border-red-800 transition-shadow"
+  class="fixed top-0 left-0 right-0 z-50 bg-blue-700 border-b border-blue-800 transition-shadow"
 >
   <div class="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
     <!-- Logo / Name -->
-    <a href="#hero" class="font-bold text-lg text-white hover:text-red-200 transition-colors">
+    <a href="#hero" class="font-bold text-lg text-white hover:text-blue-200 transition-colors">
       {site.name}
     </a>
 
@@ -17,7 +18,7 @@ import { site } from '@/data/site';
       {site.nav.map((link) => (
         <a
           href={link.href}
-          class="px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors"
+          class="px-3 py-2 text-sm font-medium text-blue-100 hover:text-white hover:bg-blue-600 rounded-md transition-colors"
         >
           {link.label}
         </a>
@@ -27,7 +28,7 @@ import { site } from '@/data/site';
     <!-- Mobile hamburger -->
     <button
       id="menu-toggle"
-      class="md:hidden p-2 rounded-md text-red-100 hover:bg-red-600 transition-colors"
+      class="md:hidden p-2 rounded-md text-blue-100 hover:bg-blue-600 transition-colors"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -41,12 +42,12 @@ import { site } from '@/data/site';
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-red-800 bg-red-700">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-blue-800 bg-blue-700">
     <nav class="max-w-5xl mx-auto px-6 py-3 flex flex-col gap-1">
       {site.nav.map((link) => (
         <a
           href={link.href}
-          class="mobile-link px-3 py-2 text-sm font-medium text-red-100 hover:text-white hover:bg-red-600 rounded-md transition-colors"
+          class="mobile-link px-3 py-2 text-sm font-medium text-blue-100 hover:text-white hover:bg-blue-600 rounded-md transition-colors"
         >
           {link.label}
         </a>
