@@ -14,6 +14,13 @@ export default {
           600: '#dc2626',
           700: '#b91c1c',
         },
+        blue: {
+          50: '#87cefa',
+          100: '#87ceeb',
+          500: '#0000ff',
+          600: '#00008b',
+          700: '#00005f',
+        },
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
